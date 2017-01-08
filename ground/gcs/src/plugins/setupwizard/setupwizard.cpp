@@ -137,6 +137,7 @@ int SetupWizard::nextId() const
         return PAGE_ESC;
 
     case PAGE_FIXEDWING:
+    case PAGE_HELI:
     case PAGE_SURFACE:
         if (getVehicleSubType() == GROUNDVEHICLE_DIFFERENTIAL) {
             return PAGE_ESC;

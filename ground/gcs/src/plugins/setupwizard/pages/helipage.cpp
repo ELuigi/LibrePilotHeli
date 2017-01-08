@@ -51,38 +51,44 @@ void HeliPage::setupSelection(Selection *selection)
 {
     selection->setTitle(tr("Helicopter Configuration"));
     selection->setText(tr("This part of the wizard will set up the flight controller for use with an helicopter "
-                          "Please select the type of swashplate you want to create a configuration for below:"));
+                          "Please select the correct type of swashplate you have on your model:"));
     selection->addItem(tr("H1"),
-                       tr("This setup expects a traditional airframe using two independent aileron servos "
-                          "on their own channel (not connected by Y adapter) plus an elevator and a rudder."),
+                       tr("\"Pure Function\" or \"single servo\" A \"single servo\" swashplate uses "
+                          "one servo for each axis: aileron,elevator (cyclic pitch), and collective pitch, "
+                          ),
                        "H1",
                        SetupWizard::HELI_CCPM);
 
     selection->addItem(tr("H3"),
-                       tr("This setup expects a traditional airframe using a single aileron servo or two servos "
-                          "connected by a Y adapter plus an elevator and a rudder."),
+                       tr("Pushrods positioned as shown. With Aileron input, the aileron and pitch servos tilt the swashplate"
+                          "left and right; with Elevator input, the three servos tilt the swashplate fore and aft; "
+                          "with Pitch input, all three servos raise the swashplate up and down."),
                        "H3",
                        SetupWizard::HELI_CCPM);
 
     selection->addItem(tr("HR3"),
-                       tr("This setup currently expects a flying-wing setup, an elevon plus rudder setup is not yet "
-                          "supported. Setup should include only two elevons, and should explicitly not include a rudder."),
-                       "HR3",
+                       tr("Pushrods positioned as shown. With Aileron input, the aileron and pitch servos tilt the swashplate"
+                          "left and right; with Elevator input, the three servos tilt the swashplate fore and aft; "
+                          "with Pitch input, all three servos raise the swashplate up and down."),
+                         "HR3",
                        SetupWizard::HELI_CCPM);
 
     selection->addItem(tr("H140"),
-                       tr("This setup expects a traditional glider airframe using two independent aileron servos "
-                          "on their own channel (not connected by Y adapter) plus Vtail mixing elevator/rudder."),
+                       tr("140 degree CCPM. Pushrods positioned as shown. Fundamentally, the servo operations of H-3 type are"
+                          " almost that same as HR3 type. However, the servo arrangement for elevator operation differs. "
+                          "140 degree CCPM offers smoother operation of the combined servos and an equal cyclic rate all around. "
+                          "On a 120 degree setup, the left/right cyclic is slightly faster than the fore/aft cyclic."),
                        "H140",
                        SetupWizard::HELI_CCPM);
     selection->addItem(tr("HE3"),
-                       tr("This setup expects a traditional glider airframe using two independent aileron servos "
-                          "on their own channel (not connected by Y adapter) plus Vtail mixing elevator/rudder."),
+                       tr("Pushrods positioned as shown. With Aileron input, the aileron and pitch servos tilt"
+                          " the swashplate left and right; with Elevator input, the servos tilt the swashplate"
+                          " fore and aft; with Pitch input, all three servos raise the swashplate up and down. "
+                          "Most commonly used for Electronic Helis."),
                        "HE3",
                        SetupWizard::HELI_CCPM);
     selection->addItem(tr("H4"),
-                       tr("This setup expects a traditional glider airframe using two independent aileron servos "
-                          "on their own channel (not connected by Y adapter) plus Vtail mixing elevator/rudder."),
+                       tr("Pushrods positioned as shown. Swash is a 4 servo ccpm, with the servos at 90 degrees to each other."),
                        "H4",
                        SetupWizard::HELI_CCPM);
 }
