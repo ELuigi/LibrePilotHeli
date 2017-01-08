@@ -28,21 +28,27 @@
 #ifndef HELIPAGE_H
 #define HELIPAGE_H
 
-#include "abstractwizardpage.h"
+#include "selectionpage.h"
 
 namespace Ui {
 class HeliPage;
 }
 
-class HeliPage : public AbstractWizardPage {
+class HeliPage : public SelectionPage {
     Q_OBJECT
 
 public:
     explicit HeliPage(SetupWizard *wizard, QWidget *parent = 0);
     ~HeliPage();
 
-private:
-    Ui::HeliPage *ui;
+
+
+protected:
+    void initializePage(VehicleConfigurationSource *settings);
+    bool validatePage(SelectionItem *selectedItem);
+    void setupSelection(Selection *selection);
 };
+
+
 
 #endif // HELIPAGE_H
